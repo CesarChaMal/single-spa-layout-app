@@ -3,7 +3,11 @@ const webpack = require('webpack');
 
 module.exports = {
   devServer: {
+    port: 4202,
     writeToDisk: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   configureWebpack: {
     output: {
@@ -11,6 +15,7 @@ module.exports = {
       libraryTarget: 'umd',
       filename: 'single-spa-layout-app.js',
       path: path.resolve(__dirname, 'dist'),
+      publicPath: 'http://localhost:4202/'
     },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
