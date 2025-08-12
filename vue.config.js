@@ -15,7 +15,6 @@ module.exports = {
       libraryTarget: 'umd',
       filename: 'single-spa-layout-app.js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: 'http://localhost:4202/'
     },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({
